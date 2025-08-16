@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LifeOS Dashboard</title>
+  <link rel="stylesheet" href="./dashboard/dashboard.css">
+</head>
+<body>
+  <div class="shell">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="avatar">🟢</div>
+        <div class="brand-text">
+          <div class="appname">LifeOS Lite</div>
+          <div class="muted">Dashboard</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-item active" id="navOverview">🏠 Übersicht</button>
+        <button class="nav-item" id="navNotes">📝 Notizen</button>
+        <button class="nav-item" disabled>🎯 Ziele</button>
+        <button class="nav-item" disabled>📚 Lernen</button>
+        <button class="nav-item" disabled>🌐 Websites</button>
+      </nav>
+
+      <div class="nav-footer">
+        <button class="nav-mini" disabled>⚙️ Einstellungen</button>
+        <button class="nav-mini" disabled>ℹ️ Über</button>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="topbar">
+        <h1 id="topTitle">Dashboard</h1>
+      </header>
+
+      <!-- Übersicht (Tiles) -->
+      <section id="viewOverview" class="grid">
+        <div class="tile tile-accent">
+          <div class="tile-title">Willkommen 👋</div>
+          <div class="tile-sub">Dies ist das Fundament. Module kommen hierhin.</div>
+        </div>
+
+        <button class="tile" id="openNotesTile">
+          <div class="tile-title">📝 Notizen</div>
+          <div class="tile-sub">Dein persönliches Journal & Workspace</div>
+        </button>
+
+        <div class="tile" aria-disabled="true">
+          <div class="tile-title">🎯 Ziele</div>
+          <div class="tile-sub">Bald verfügbar</div>
+        </div>
+
+        <div class="tile" aria-disabled="true">
+          <div class="tile-title">📚 Lernen</div>
+          <div class="tile-sub">Bald verfügbar</div>
+        </div>
+      </section>
+
+      <!-- Notizen-View (versteckt bis geöffnet) -->
+      <!-- Notizen-View (versteckt bis geöffnet) -->
+<section id="viewNotes" class="notes hidden" aria-hidden="true">
+  <div class="app">
+    <aside class="notesSidebar">
+      <div class="notesTop">
+  <button id="newBtn" class="icon-btn" title="Neue Notiz">
+    <!-- Dokument + Plus -->
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+      <path fill="currentColor" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm0 0v6h6"/>
+      <path fill="currentColor" d="M12 11a1 1 0 0 1 1 1v2h2a1 1 0 1 1 0 2h-2v2a1 1 0 1 1-2 0v-2H9a1 1 0 1 1 0-2h2v-2a1 1 0 0 1 1-1z"/>
+    </svg>
+  </button>
+
+  <button id="newFolderBtn" class="icon-btn" title="Neuer Ordner">
+    <!-- Ordner + Plus -->
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+      <path fill="currentColor" d="M10 4l2 2h6a2 2 0 0 1 2 2v1H4V6a2 2 0 0 1 2-2z"/>
+      <path fill="currentColor" d="M20 9H4v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2z"/>
+      <path fill="currentColor" d="M12 12a1 1 0 0 1 1 1v2h2a1 1 0 1 1 0 2h-2v2a1 1 0 1 1-2 0v-2H9a1 1 0 1 1 0-2h2v-2a1 1 0 0 1 1-1z"/>
+    </svg>
+  </button>
+
+  <input id="search" placeholder="Suche…" class="search" />
+</div>
+      <div id="crumbs" class="crumbs"></div>
+      <div id="list" class="list"></div>
+    </aside>
+    <main class="content">
+      <input id="title" class="title" placeholder="Titel…" />
+      <textarea id="editor" class="editor" placeholder="Schreibe hier… (Ctrl+S speichert)"></textarea>
+      <div class="row">
+        <button id="saveBtn">Speichern</button>
+        <button id="deleteBtn">Löschen</button>
+        <span id="status" class="muted"></span>
+      </div>
+    </main>
+  </div>
+</section>
+
+    </main>
+  </div>
+
+  <script src="./dashboard/dashboard.js"></script>
+  <script src="./modules/notes/notes.js"></script>
+</body>
+</html>

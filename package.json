@@ -1,0 +1,12 @@
+{
+  "name": "lifeos-lite",
+  "version": "0.1.0",
+  "description": "LifeOS Dashboard",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^30.0.0"
+  }
+}

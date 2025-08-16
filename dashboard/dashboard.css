@@ -1,0 +1,82 @@
+:root{
+  --bg:#0f1115; --panel:#161a22; --muted:#8a93a6; --text:#e9eef6; --acc:#5eead4; --border:#222531;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:14px system-ui, -apple-system, Segoe UI, Roboto, Arial;overflow:hidden}
+
+/* Layout */
+.shell{display:grid;grid-template-columns:260px 1fr;grid-template-rows:100vh;width:100vw;height:100vh}
+
+/* Sidebar */
+.sidebar{background:var(--panel);border-right:1px solid var(--border);display:flex;flex-direction:column;padding:14px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;padding:6px 8px;border:1px solid var(--border);border-radius:12px;background:linear-gradient(180deg,#121621,#0d1118)}
+.avatar{width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:#0a0e15}
+.appname{font-weight:600}
+.muted{color:var(--muted);font-size:12px}
+.nav{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.nav-item{all:unset;cursor:pointer;padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:linear-gradient(180deg,#121621,#0e1118);color:var(--text)}
+.nav-item.active{outline:2px solid #2a3346}
+.nav-item[disabled]{opacity:.45;cursor:not-allowed}
+.nav-footer{margin-top:auto;display:flex;gap:8px}
+.nav-mini{all:unset;opacity:.55;cursor:default;padding:8px 10px;border:1px dashed var(--border);border-radius:8px}
+
+/* Main */
+.main{display:grid;grid-template-rows:56px 1fr;overflow:hidden}
+.topbar{display:flex;align-items:center;padding:0 16px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,#0f1115,#0d1017)}
+.topbar h1{font-size:16px;margin:0;color:#dfe6f2}
+
+/* Tiles (Overview) */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(220px,1fr));gap:14px;padding:16px;overflow:hidden;align-content:start}
+.tile{background:#0c0f14;border:1px solid var(--border);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:6px;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.tile[aria-disabled="true"]{opacity:.6}
+.tile-accent{background:linear-gradient(180deg,#121621,#0f141d);border-color:var(--border)}
+.tile-title{font-size:18px;font-weight:600}
+.tile-sub{color:var(--muted)}
+.hidden{display:none!important}
+
+/* ---- Notizen-Styles (wie bei dir) ---- */
+.notes .app{display:flex;height:calc(100vh - 56px)}
+.notesSidebar{width:300px;background:var(--panel);border-right:1px solid var(--border);display:flex;flex-direction:column}
+.notesTop{padding:12px;border-bottom:1px solid var(--border);display:flex;gap:8px}
+.search{flex:1}
+input,textarea,button{border:1px solid #2a2f3d;background:#0c0f14;color:var(--text);border-radius:8px;padding:8px}
+button{cursor:pointer}
+.list{flex:1;overflow:auto}
+.item{padding:10px 12px;border-bottom:1px solid #202433;cursor:pointer}
+.item.active{background:#111623}
+.content{flex:1;display:flex;flex-direction:column;padding:16px;gap:10px}
+.title{font-size:18px;width:100%}
+.editor{flex:1;width:100%;resize:none;line-height:1.5}
+.row{display:flex;gap:8px;align-items:center}
+/* Breadcrumbs im Notizen-Sidebar */
+.crumbs{
+  padding:8px 12px;
+  border-bottom:1px solid var(--border);
+  font-size:12px;
+  color:var(--muted);
+  display:flex; flex-wrap:wrap; gap:6px;
+}
+.crumbs .link{
+  cursor:pointer; color:#cbd5e1; padding:2px 6px; border-radius:6px;
+  border:1px solid transparent;
+}
+.crumbs .link:hover{ border-color:#2a3346; }
+.crumbs .sep{ opacity:.5 }
+
+/* Ordner-Look in der Liste */
+.item.folder strong::before{
+  content:"📁 ";
+}
+.icon-btn{
+  all:unset;
+  display:grid; place-items:center;
+  width:36px; height:36px;
+  border:1px solid #2a2f3d;
+  background:#0c0f14;
+  color:#e9eef6;
+  border-radius:8px;
+  cursor:pointer;
+}
+.icon-btn:hover{ outline:1px solid #2a3346 }
+.icon-btn:active{ transform:translateY(1px) }
