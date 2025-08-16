@@ -9,7 +9,8 @@ contextBridge.exposeInMainWorld('lifeos', {
 contextBridge.exposeInMainWorld('web', {
   list:   () => ipcRenderer.invoke('web:list'),
   create: (name) => ipcRenderer.invoke('web:create', name),
-  read:   (id)   => ipcRenderer.invoke('web:read', id),
+  read:   (id) => ipcRenderer.invoke('web:read', id),
   save:   (data) => ipcRenderer.invoke('web:save', data),
-  remove: (id)   => ipcRenderer.invoke('web:delete', id),
+  remove: (id) => ipcRenderer.invoke('web:delete', id),
 });
+

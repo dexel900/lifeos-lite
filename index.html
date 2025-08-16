@@ -100,53 +100,31 @@
     </main>
   </div>
 </section>
-
-<!-- Websites-View -->
-<section id="viewWeb" class="hidden" aria-hidden="true">
-  <div class="app">
-    <aside class="notesSidebar">
-      <div class="notesTop">
-        <button id="webNewBtn" class="icon-btn" title="Neues Projekt">
-          <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M5 4h6l2 2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path fill="currentColor" d="M12 11a1 1 0 0 1 1 1v2h2a1 1 0 1 1 0 2h-2v2a1 1 0 1 1-2 0v-2H9a1 1 0 1 1 0-2h2v-2a1 1 0 0 1 1-1z"/></svg>
-        </button>
-        <input id="webSearch" placeholder="Suche Projekte…" class="search"/>
+<div id="viewWeb" class="view hidden">
+  <h2>Websites Workspace</h2>
+  <div class="workspace">
+    <aside id="webList" class="sidebar"></aside>
+    <main class="editor">
+      <div class="tabs">
+        <button data-tab="html">HTML</button>
+        <button data-tab="css">CSS</button>
+        <button data-tab="js">JS</button>
       </div>
-      <div id="webList" class="list"></div>
-    </aside>
-
-    <main class="content">
-      <div class="row" style="gap:6px;margin-bottom:6px">
-        <div id="webTabs" class="tabs">
-          <button data-tab="html" class="tab active">HTML</button>
-          <button data-tab="css"  class="tab">CSS</button>
-          <button data-tab="js"   class="tab">JS</button>
-          <span id="webProjectName" class="muted" style="margin-left:12px"></span>
-        </div>
-        <div style="flex:1"></div>
-        <button id="webSaveBtn">Speichern</button>
-        <button id="webDeleteBtn">Löschen</button>
-      </div>
-
-      <div class="split">
-        <div class="pane editors">
-          <textarea id="webHtml" class="editor" spellcheck="false"></textarea>
-          <textarea id="webCss"  class="editor hidden" spellcheck="false"></textarea>
-          <textarea id="webJs"   class="editor hidden" spellcheck="false"></textarea>
-        </div>
-        <div class="pane preview">
-          <iframe id="webPreview" sandbox="allow-scripts allow-same-origin" style="width:100%;height:100%;border:0;border-radius:10px;background:#fff"></iframe>
-        </div>
-      </div>
-      <div><span id="webStatus" class="muted"></span></div>
+      <textarea id="webHtml" class="code"></textarea>
+      <textarea id="webCss" class="code hidden"></textarea>
+      <textarea id="webJs" class="code hidden"></textarea>
+      <iframe id="webPreview"></iframe>
     </main>
   </div>
-</section>
+</div>
 
 
-    </main>
+</main>
   </div>
 
   <script src="./dashboard/dashboard.js"></script>
   <script src="./modules/notes/notes.js"></script>
+  <script src="modules/web/websites.js"></script>
+
 </body>
 </html>
